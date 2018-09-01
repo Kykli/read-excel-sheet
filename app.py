@@ -20,7 +20,7 @@ try:
         if number == "1":
             try:
                 city = input("Provide city: ")
-                print(str(vero2018.allData[city]))
+                print(str(FILENAME.allData[city]))
                 input("Press Enter to continue...")
             except KeyError:
                 print(bcolors.red + "City not found!" + bcolors.end)
@@ -29,7 +29,7 @@ try:
         elif number == "2":
             try:
                 streetAddress = input("Provide street address: ")
-                print(str(vero2018.allData[streetAddress]))
+                print(str(FILENAME.allData[streetAddress]))
                 input("Press Enter to continue...")
             except KeyError:
                 print(bcolors.red + "Street address not found!" + bcolors.end)
