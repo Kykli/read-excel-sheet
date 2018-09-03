@@ -3,12 +3,13 @@ import sys
 import FILENAME
 
 #os.chdir("PATH")
+
+# Colors only for Linux
 class bcolors:
     red = "\033[0;31m"
     end = "\033[0m"
 
 try:
-    
     while True:
         print("******************")
         print("* Chosoe 1 or 2: *")
@@ -18,19 +19,23 @@ try:
         number = input("")
 
         if number == "1":
-            try:
-                city = input("Provide city: ")
-                print(str(FILENAME.allData[city]))
-                input("Press Enter to continue...")
+            while True:
+                try:
+                    city = input("Provide city: ").title()
+                    print("\n" + str(FILENAME.allData[city]) + "\n")
+                    input("Press Enter to continue...")
+                    break
             except KeyError:
                 print(bcolors.red + "City not found!" + bcolors.end)
                 input("Press Enter to continue...")
         
         elif number == "2":
-            try:
-                streetAddress = input("Provide street address: ")
-                print(str(FILENAME.allData[streetAddress]))
-                input("Press Enter to continue...")
+            while True:
+                try:
+                    streetAddress = input("Provide street address: ").title()
+                    print("\n" + str(FILENAME.allData[streetAddress]) + "\n")
+                    input("Press Enter to continue...")
+                    break
             except KeyError:
                 print(bcolors.red + "Street address not found!" + bcolors.end)
                 input("Press Enter to continue...")
